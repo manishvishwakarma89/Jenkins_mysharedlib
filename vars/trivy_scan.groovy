@@ -5,6 +5,7 @@ def call(String exitCode = "0", String severity = "HIGH,CRITICAL"){
           --severity ${severity} \
           --exit-code ${exitCode} \
           --no-progress \
+          --scanners vuln \
           --skip-dirs node_modules \
           --skip-dirs frontend/node_modules \
           --skip-dirs backend/node_modules \
