@@ -7,10 +7,7 @@ def call(String exitCode = "0", String severity = "HIGH,CRITICAL"){
           --no-progress \
           -o trivy-fs-report.txt \
           .
-        
-        echo "Trivy scan completed"
-        cat trivy-fs-report.txt
     """
-    
+    sh "cat trivy-fs-report.txt"
     archiveArtifacts artifacts: 'trivy-fs-report.txt', allowEmptyArchive: true
 }
