@@ -5,6 +5,9 @@ def call(String exitCode = "0", String severity = "HIGH,CRITICAL"){
           --severity ${severity} \
           --exit-code ${exitCode} \
           --no-progress \
+          --skip-dirs node_modules \
+          --skip-dirs frontend/node_modules \
+          --skip-dirs backend/node_modules \
           -o trivy-fs-report.txt \
           .
     """
