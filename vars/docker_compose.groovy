@@ -1,6 +1,6 @@
-def call(){
+def call(String composeFile){
     sh """
-        docker compose down
-        docker compose up -d
+        docker compose -f ${composeFile} down
+        docker compose -f ${composeFile} up -d
     """
 }
